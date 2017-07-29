@@ -18,7 +18,7 @@ with(data, hist(Global_active_power, col="red",
                          main="Global Active Power"))
 # Save it as plot1.png
 dev.copy(png,'plot1.png',  width = 480, height = 480)
-
+dev.off()
 
 # Set local LC_TIME to en_US for proper day name in week labels
 locale_original <- Sys.getlocale( category = "LC_TIME" )
@@ -33,7 +33,7 @@ with(data, plot(Time, Global_active_power,
 
 # Save it as plot2.png
 dev.copy(png,'plot2.png',  width = 480, height = 480)
-
+dev.off()
 
 # Plot Submetering lines
 plot(data$Time, data$Sub_metering_1, 
@@ -46,7 +46,7 @@ legend("topright", legend=names(data)[grepl("metering", names(data))],
        lty=c(1,1,1), col=c("black","red", "blue"), cex=0.8)
 # Save it as plot3.png
 dev.copy(png,'plot3.png',  width = 480, height = 480)
-
+dev.off()
 
 # Plot4 : four plots in a 2x2 frame
 par(mfrow=c(2,2))
